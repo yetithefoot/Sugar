@@ -850,11 +850,11 @@ package('Object', function () {
     obj2 = obj1.clone();
     obj3 = obj1.clone(true);
 
-    equal(obj1.foo.jumpy, 'jump', 'extended | cloned object has nested attribute');
-    obj1.foo.jumpy = 'hump';
-    equal(obj1.foo.jumpy, 'hump', 'extended | original object is modified');
-    equal(obj2.foo.jumpy, 'hump', 'extended | clone is shallow');
-    equal(obj3.foo.jumpy, 'jump', 'extended | clone is deep');
+    equal(obj1.get('foo.jumpy'), 'jump', 'extended | cloned object has nested attribute');
+    obj1.set('foo.jumpy', 'hump');
+    equal(obj1.get('foo.jumpy'), 'hump', 'extended | original object is modified');
+    equal(obj2.get('foo.jumpy'), 'hump', 'extended | clone is shallow');
+    equal(obj3.get('foo.jumpy'), 'jump', 'extended | clone is deep');
     equal(obj2.keys().sort(), ['broken','foo'], 'extended | cloned objects are themselves extended');
 
     obj1 = run(Object, 'extended', [{
@@ -865,9 +865,9 @@ package('Object', function () {
     obj2 = obj1.clone();
     obj3 = obj1.clone(true);
 
-    obj1.foo.bar[1] = 'b';
-    equal(obj1.foo.bar, [1,'b',3], 'extended | original object is modified');
-    equal(obj3.foo.bar, [1,2,3], 'extended | cloned object is not modified');
+    obj1.set('foo.bar.1', 'b');
+    equal(obj1.get('foo.bar'), [1,'b',3], 'extended | original object is modified');
+    equal(obj3.get('foo.bar'), [1,2,3], 'extended | cloned object is not modified');
 
     // dates and regexes
 
