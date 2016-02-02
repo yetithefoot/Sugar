@@ -49,5 +49,61 @@ var tests = [
       'complexTemplateString * 1000'
     ]
   },
+  {
+    fn: function(arg) {
+      return arg.format(complexUniqueTemplateKey);
+    },
+    targets: [
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format2(templateObj);
+    },
+    targets: [
+      'simpleTemplateString * 10000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format2(templateObj);
+    },
+    targets: [
+      'complexTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format2(complexUniqueTemplateKey);
+    },
+    targets: [
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format3(templateObj);
+    },
+    targets: [
+      'simpleTemplateString * 10000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format3(templateObj);
+    },
+    targets: [
+      'complexTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format2(complexUniqueTemplateKey);
+    },
+    targets: [
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
 ];
 

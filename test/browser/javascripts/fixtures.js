@@ -7,6 +7,18 @@ function createHugeString(str) {
   return tmp;
 }
 
+function createComplexUniqueTemplateString(obj) {
+  var tokens = [];
+  for (var i = 97; i < 107; i++) {
+    for (var j = 97; j < 107; j++) {
+      var key = String.fromCharCode(i) + String.fromCharCode(j);
+      obj[key] = (i.toString()) + '|' + (j.toString());
+      tokens.push('{' + key + '}');
+    }
+  }
+  return tokens.join(', ');
+}
+
 normalDate = new Date();
 normalFunction = function() {
   return 'foo';
@@ -28,6 +40,9 @@ hugeNumberAsString = '893249283429';
 hugeNumberAsStringWithTrailingLetters = '893249283429alkdf';
 simpleTemplateString = 'x: {x} y: {y}';
 complexTemplateString = '{x}  {y} '+('{yy}').repeat(1000)+' {x} {z}';
+
+complexUniqueTemplateKey = {};
+complexUniqueTemplateString = createComplexUniqueTemplateString(complexUniqueTemplateKey);
 
 emptyArray       = [];
 smallNumberArray = [1,2,3];
