@@ -99,7 +99,31 @@ var tests = [
   },
   {
     fn: function(arg) {
-      return arg.format2(complexUniqueTemplateKey);
+      return arg.format3(complexUniqueTemplateKey);
+    },
+    targets: [
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format4(templateObj);
+    },
+    targets: [
+      'simpleTemplateString * 10000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format4(templateObj);
+    },
+    targets: [
+      'complexTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format4(complexUniqueTemplateKey);
     },
     targets: [
       'complexUniqueTemplateString * 1000'
