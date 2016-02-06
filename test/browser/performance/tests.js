@@ -231,5 +231,29 @@ var tests = [
       'complexUniqueTemplateString * 1000'
     ]
   },
+  {
+    fn: function(arg) {
+      return arg.format9(templateObj);
+    },
+    targets: [
+      'simpleTemplateString * 10000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format9(templateObj);
+    },
+    targets: [
+      'complexTemplateString * 1000'
+    ]
+  },
+  {
+    fn: function(arg) {
+      return arg.format9(complexUniqueTemplateKey);
+    },
+    targets: [
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
 ];
 
