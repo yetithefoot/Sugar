@@ -25,233 +25,114 @@ arr = arr.concat(arr);
 arr = arr.concat(arr);
 arr = arr.concat(arr);
 
-var templateObj = {
-  'x':  '1,',
-  'y':  '2,',
-  'yy': '3,',
-  'z':  '4,'
-}
-
 var tests = [
   {
+    name: 'Original',
     fn: function(arg) {
-      return arg.format(templateObj);
+      return arg.format(templateKey);
     },
     targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format(complexUniqueTemplateKey);
-    },
-    targets: [
-      'complexUniqueTemplateString * 1000'
-    ]
-  },
-  /*
-  {
-    fn: function(arg) {
-      return arg.format2(templateObj);
-    },
-    targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format2(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format2(complexUniqueTemplateKey);
-    },
-    targets: [
-      'complexUniqueTemplateString * 1000'
-    ]
-  },
- */
-  {
-    fn: function(arg) {
-      return arg.format3(templateObj);
-    },
-    targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format3(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format3(complexUniqueTemplateKey);
-    },
-    targets: [
-      'complexUniqueTemplateString * 1000'
-    ]
-  },
-  /*
-  {
-    fn: function(arg) {
-      return arg.format4(templateObj);
-    },
-    targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format4(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format4(complexUniqueTemplateKey);
-    },
-    targets: [
-      'complexUniqueTemplateString * 1000'
-    ]
-  },
- */
-  /*
-  {
-    fn: function(arg) {
-      return arg.format5(templateObj);
-    },
-    targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format5(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format5(complexUniqueTemplateKey);
-    },
-    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
       'complexUniqueTemplateString * 1000'
     ]
   },
   {
+    name: 'Ermouth key pass',
     fn: function(arg) {
-      return arg.format6(templateObj);
+      return arg.format2(templateKey);
     },
     targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format6(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format6(complexUniqueTemplateKey);
-    },
-    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
       'complexUniqueTemplateString * 1000'
     ]
   },
   {
+    name: 'Walk characters',
     fn: function(arg) {
-      return arg.format7(templateObj);
+      return arg.format3(templateKey);
     },
     targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format7(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format7(complexUniqueTemplateKey);
-    },
-    targets: [
-      'complexUniqueTemplateString * 1000'
-    ]
-  },
- */
-  {
-    fn: function(arg) {
-      return arg.format8(templateObj);
-    },
-    targets: [
-      'simpleTemplateString * 10000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format8(templateObj);
-    },
-    targets: [
-      'complexTemplateString * 1000'
-    ]
-  },
-  {
-    fn: function(arg) {
-      return arg.format8(complexUniqueTemplateKey);
-    },
-    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
       'complexUniqueTemplateString * 1000'
     ]
   },
   {
+    name: 'Ermouth 2nd',
     fn: function(arg) {
-      return arg.format9(templateObj);
+      return arg.format4(templateKey);
     },
     targets: [
-      'simpleTemplateString * 10000'
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
+      'complexUniqueTemplateString * 1000'
     ]
   },
   {
+    name: '.indexOf + .slice',
     fn: function(arg) {
-      return arg.format9(templateObj);
+      return arg.format5(templateKey);
     },
     targets: [
-      'complexTemplateString * 1000'
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
+      'complexUniqueTemplateString * 1000'
     ]
   },
   {
+    name: 'Original with Object.keys pre-pass',
     fn: function(arg) {
-      return arg.format9(complexUniqueTemplateKey);
+      return arg.format6(templateKey);
     },
     targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    name: 'Simplified regex',
+    fn: function(arg) {
+      return arg.format7(templateKey);
+    },
+    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    name: 'Match all the things!',
+    fn: function(arg) {
+      return arg.format8(templateKey);
+    },
+    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    name: 'Memoize functions',
+    fn: function(arg) {
+      return arg.format9(templateKey);
+    },
+    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
+      'complexUniqueTemplateString * 1000'
+    ]
+  },
+  {
+    name: 'Memoize tokens',
+    fn: function(arg) {
+      return arg.format10(templateKey);
+    },
+    targets: [
+      'simpleTemplateString * 10000',
+      'complexTemplateString * 1000',
       'complexUniqueTemplateString * 1000'
     ]
   },

@@ -38,11 +38,11 @@ hugeString   = '';
 stringObject = new String('wasabi');
 hugeNumberAsString = '893249283429';
 hugeNumberAsStringWithTrailingLetters = '893249283429alkdf';
-simpleTemplateString = 'x: {x} y: {y}';
-complexTemplateString = '{x}  {y} '+('{yy}').repeat(1000)+' {x} {z}';
+simpleTemplateString = 'aa: {aa} ab: {ab}';
+complexTemplateString = '{aa} '+('{bb}').repeat(1000)+' {ac} {if}';
 
-complexUniqueTemplateKey = {};
-complexUniqueTemplateString = createComplexUniqueTemplateString(complexUniqueTemplateKey);
+templateKey = {};
+complexUniqueTemplateString = createComplexUniqueTemplateString(templateKey);
 
 emptyArray       = [];
 smallNumberArray = [1,2,3];
