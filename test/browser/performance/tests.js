@@ -126,7 +126,7 @@ var tests = [
     ]
   },
   {
-    name: 'Memoize tokens',
+    name: 'Ermouth memoize tokens',
     fn: function(arg) {
       return arg.format10(templateKey);
     },
